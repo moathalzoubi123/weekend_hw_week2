@@ -5,9 +5,9 @@ from src.rooms import Room
 class TestRoom(unittest.TestCase):
     def setUp(self):
 
-        self.room = Room("room1" , ["liam", "thomas"], ["song1", "song2" , "song3"], 2, 20) 
+        self.room = Room("room1" , ["liam", "thomas"], ["song1", "song2" , "song3", "song123"], 2, 20) 
         self.room2 = Room("room2" , ["jack", "john"], ["songA", "songB", "songC",], 4, 30)
-        self.guest = Guest("moath", 100,)
+        self.guest = Guest("moath", 100,"song123")
 
     def test_room_has_name(self):
         self.assertEqual("room1", self.room.name)   
@@ -25,6 +25,9 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(["thomas"], self.room.guests)
 
     def test_room_has_songs(self):
-        self.assertEqual(["song1", "song2" , "song3"], self.room.songs) 
+        self.assertEqual(["song1", "song2" , "song3", "song123"], self.room.songs) 
+
+    def test_cheer_loudly(self):
+        self.assertEqual("Whoo", self.room.cheer_loudly(self.guest.fav_song))  
 
   

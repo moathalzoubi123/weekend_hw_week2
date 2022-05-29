@@ -11,7 +11,7 @@ class Room:
 
         
         
-        self.guest = Guest("moath", 100,) 
+        self.guest = Guest("moath", 100, "song123") 
 
 
     def checkin_guest(self, guest):
@@ -27,3 +27,7 @@ class Room:
             if guest == guest:
                 self.guests.remove(guest)  
     
+
+    def cheer_loudly(self, fav_song):
+        if fav_song in self.songs:
+            return "Whoo" 
